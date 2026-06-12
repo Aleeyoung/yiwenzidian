@@ -623,7 +623,8 @@ footer {
         min-height: auto;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
     }
     .small_illustrate img {
         height: 4.5em;
@@ -669,9 +670,8 @@ footer {
         font-size: 2em;
     }
     #download_cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         margin: 1.5em 0;
     }
     #download_cards .items {
@@ -679,6 +679,9 @@ footer {
         max-width: 300px;
         min-height: auto;
         align-items: center;
+    }
+    .small_button{
+        width: 100%;
     }
     #download_button {
         padding: 0 3em;
