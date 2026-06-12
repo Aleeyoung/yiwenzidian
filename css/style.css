@@ -1,0 +1,854 @@
+/* ===== BASE RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '宋体';
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== HEADER / BANNER ===== */
+header {
+    height: 9vh;
+    min-height: 56px;
+    width: 100vw;
+    background-color: brown;
+    padding: 0 20px;
+    border-bottom: 30px solid transparent;
+    border-image-source: url(yiLine.jpg);
+    border-image-slice: 0 0 100% 0;
+    border-image-repeat: repeat;
+    border-image-width: 0 0 30px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+#banner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#banner_left {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.7em;
+    min-width: 0; /* prevent flex overflow */
+}
+#banner_left span:first-of-type {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#app_icon {
+    height: 80%;
+    flex-shrink: 0;
+}
+#banner_right {
+    display: flex;
+    align-items: center;
+    margin-right: 2em;
+    flex-shrink: 0;
+}
+#banner_right ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+#banner_right ul > li {
+    width: max-content;
+    cursor: pointer;
+}
+.banner_a {
+    font-size: 1.4em;
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+.banner_a:hover {
+    color: #fff;
+}
+
+/* ===== MOBILE MENU BUTTON (hidden on desktop) ===== */
+#mobile_menu_btn {
+    display: none;
+}
+
+/* ===== MAIN CONTAINER ===== */
+#container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ===== FRONT VIEW (hero) ===== */
+#front_view {
+    width: 100%;
+    min-height: 40vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0;
+}
+#first_info {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+#description {
+    width: 60%;
+}
+#description p {
+    color: #fff;
+    font-size: 4em;
+    line-height: 1.2;
+}
+.btn {
+    display: block;
+    width: fit-content;
+    color: #fff;
+    background-color: #a74d04;
+    text-decoration: none;
+    padding: 1em 1.6em;
+    border-radius: 36px;
+    margin-top: 1em;
+    white-space: nowrap;
+}
+#app_icon_pic {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+#content {
+    width: 100%;
+}
+
+/* About Aliwonfun */
+#first_of_all {
+    min-height: 40vh;
+    padding: 3em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f2f5fa;
+}
+#first_of_all p:first-of-type {
+    font-size: 3em;
+    line-height: 1.2;
+}
+#first_of_all p:nth-of-type(2) {
+    margin: 0.6em 0;
+}
+
+/* Features */
+#features {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5em 1em;
+    text-align: center;
+}
+#features > p:first-of-type {
+    font-size: 3em;
+    line-height: 1.2;
+}
+#features > p:nth-of-type(2) {
+    margin: 1em 0;
+}
+#feature_items {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: 2em 0;
+    justify-content: space-between;
+    gap: 1em;
+}
+.items {
+    min-height: 16em;
+    width: 10em;
+}
+.small_illustrate img {
+    height: 6em;
+}
+.small_title {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin: 0.6em 0;
+}
+.small_description {
+    line-height: 1.5;
+}
+
+/* GitHub */
+#github_info {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0;
+}
+#github_overall {
+    width: 50%;
+    border-radius: 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+#github_pic {
+    flex-shrink: 0;
+}
+#github_description {
+    flex: 1;
+}
+.open_words {
+    margin: 0 2em;
+    line-height: 1.6;
+}
+
+/* Download */
+#download {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+}
+#download_content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+#download_options {
+    text-align: left;
+}
+#download_options > p:first-child {
+    font-size: 3em;
+    line-height: 1.2;
+}
+#download_options > p:nth-child(2) {
+    margin: 1em 0;
+}
+#download_cards {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 2em 0;
+    justify-content: space-between;
+    gap: 1em;
+}
+.download_button {
+    display: block;
+    height: 3em;
+    width: 100%;
+    text-align: center;
+    line-height: 3em;
+    color: #fff;
+    background-color: #0f62f1;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#warning {
+    min-height: 22vh;
+    width: 100%;
+    background-color: #d7ffb8;
+    padding: 1.5em 3em;
+    border: 2px solid #58cc00;
+    color: #59a700;
+    border-radius: 36px;
+    margin-bottom: 1em;
+}
+#warning p {
+    line-height: 1.6;
+}
+.center_title {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+
+/* Corrector */
+#corrector {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+}
+#correct_method {
+    width: 60%;
+    min-height: auto;
+}
+.block_words {
+    text-indent: 2em;
+    line-height: 1.6em;
+    margin-bottom: 0.6em;
+}
+#correct_content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2em 0;
+    gap: 1em;
+}
+.correct_item {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #58cc00;
+    background-color: #d7ffb8;
+    min-height: 8em;
+    border-radius: 36px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Sponsor */
+#sponsor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+}
+#sponsor_block {
+    width: 60%;
+    min-height: auto;
+    padding-bottom: 2em;
+}
+#thank_words_title {
+    font-size: 3em;
+    margin: 1em 0;
+}
+#thank_words .block_words {
+    line-height: 1.8;
+}
+/* Inline candy bag image in sponsor text */
+#thank_words img {
+    vertical-align: middle;
+    height: 80px;
+    cursor: pointer;
+}
+
+/* ===== DIALOGS ===== */
+.dialogger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: none;
+    border-radius: 12px;
+    max-width: 90vw;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+.dialog_title {
+    font-size: 2em;
+    margin: 1em;
+    line-height: 1.4;
+}
+.qr_code {
+    text-align: center;
+}
+.qr_code img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50vh;
+}
+.close_btn {
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+}
+.close_button {
+    display: block;
+    height: 3em;
+    width: 20vh;
+    max-width: 180px;
+    min-width: 100px;
+    text-align: center;
+    line-height: 3em;
+    color: #fff;
+    background-color: #0f62f1;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* ===== BACK TO TOP ===== */
+#back_to_top {
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    cursor: pointer;
+    z-index: 999;
+}
+#back_to_top img {
+    height: 64px;
+    display: block;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    margin-top: 5em;
+    padding-bottom: 2em;
+}
+#infos {
+    width: 60%;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2em 0;
+}
+#final_logo {
+    width: 60%;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 2px solid #ccc;
+    padding: 1em 0;
+    gap: 1em;
+}
+#bottom_logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    flex: 1;
+}
+#bottom_logo img {
+    height: 6vh;
+    min-height: 36px;
+    max-height: 54px;
+}
+#copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+}
+#copyright p {
+    width: max-content;
+    font-size: 1.2em;
+    white-space: nowrap;
+}
+.column_title {
+    font-size: 1.2em;
+    margin: 1em 0;
+    text-align: center;
+    font-weight: 600;
+}
+.column_list ul {
+    list-style-type: none;
+    text-align: center;
+}
+.column_list ul li {
+    line-height: 2em;
+}
+.column_list ul li > a {
+    text-decoration: none;
+    color: #000;
+}
+.column_list ul li > a:hover {
+    color: #a74d04;
+}
+
+/* ======================================================
+   MOBILE ADAPTATION  (≤ 768px)
+   ====================================================== */
+@media screen and (max-width: 768px) {
+
+    /* --- Header --- */
+    header {
+        height: auto;
+        min-height: 56px;
+        padding: 8px 12px;
+    }
+    #banner {
+        position: relative;
+        align-items: center;
+        min-height: 40px;
+    }
+    #banner_left {
+        height: auto;
+        gap: 0.5em;
+        flex: 1;
+        min-width: 0;
+    }
+    #banner_left span:first-of-type {
+        font-size: 1.4em !important; /* override inline style */
+    }
+    #banner_left span:nth-of-type(2) {
+        font-size: 0.9em;
+        color: #ccc;
+    }
+    #app_icon {
+        height: 36px;
+    }
+
+    /* Hamburger button */
+    #mobile_menu_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        color: white;
+        cursor: pointer;
+        padding: 4px 8px;
+        flex-shrink: 0;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Dropdown nav */
+    #banner_right {
+        display: none;
+        position: absolute;
+        top: calc(100% + 4px);
+        right: 0;
+        width: 200px;
+        background: brown;
+        border-radius: 10px;
+        padding: 12px;
+        margin-right: 0;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        z-index: 1100;
+    }
+    #banner_right.show {
+        display: block;
+    }
+    #banner_right ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    #banner_right ul li {
+        width: 100%;
+    }
+    .banner_a {
+        font-size: 1.1em;
+        display: block;
+        padding: 4px 0;
+    }
+
+    /* --- Hero section --- */
+    #front_view {
+        min-height: auto;
+        padding: 3em 1.2em;
+    }
+    #first_info {
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 1.5em;
+    }
+    #description {
+        width: 100%;
+    }
+    #description p {
+        font-size: 2em;
+    }
+    #app_icon_pic {
+        width: auto;
+    }
+    #app_icon_pic img {
+        height: 20vw !important;
+        min-height: 80px;
+        max-height: 130px;
+    }
+    .btn {
+        margin: 1em auto 0;
+    }
+
+    /* --- About Aliwonfun --- */
+    #first_of_all {
+        min-height: auto;
+        padding: 2.5em 1.5em;
+    }
+    #first_of_all p:first-of-type {
+        font-size: 2em;
+    }
+    #first_of_all .btn {
+        margin: 1em auto 0;
+    }
+
+    /* --- Features --- */
+    #features {
+        padding: 3em 1.2em;
+    }
+    #features > p:first-of-type {
+        font-size: 1.8em;
+    }
+    #feature_items {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin: 1.5em 0;
+    }
+    .items {
+        width: 100%;
+        max-width: 340px;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .small_illustrate img {
+        height: 4.5em;
+    }
+    .small_title {
+        font-size: 1.3em;
+    }
+
+    /* --- GitHub --- */
+    #github_info {
+        min-height: auto;
+        padding: 2.5em 1.2em;
+    }
+    #github_overall {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    #github_pic {
+        text-align: center;
+    }
+    #github_pic img {
+        height: 4em !important;
+        margin: 1em auto !important;
+        display: block;
+    }
+    #github_description {
+        width: 100%;
+    }
+    .open_words {
+        margin: 0;
+        margin-bottom: 0.8em;
+    }
+
+    /* --- Download --- */
+    #download {
+        padding: 2em 1.2em;
+    }
+    #download_content {
+        width: 100%;
+    }
+    #download_options > p:first-child {
+        font-size: 2em;
+    }
+    #download_cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin: 1.5em 0;
+    }
+    #download_cards .items {
+        width: 100%;
+        max-width: 300px;
+        min-height: auto;
+        align-items: center;
+    }
+    #download_button {
+        padding: 0 3em;
+    }
+    #warning {
+        min-height: auto;
+        padding: 1.5em 1.5em;
+        border-radius: 20px;
+    }
+    #warning > p:first-child {
+        font-size: 1.4em !important;
+        padding-top: 0 !important;
+        margin-bottom: 0.5em;
+    }
+
+    /* --- Corrector --- */
+    #corrector {
+        padding: 2em 1.2em;
+    }
+    #correct_method {
+        width: 100%;
+        min-height: auto;
+    }
+    #correct_title > p:first-child {
+        font-size: 2em !important;
+        margin: 0.5em 0 0.4em !important;
+    }
+    #correct_content {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5em 0;
+        gap: 1rem;
+    }
+    .correct_item {
+        width: 100%;
+        max-width: 340px;
+        min-height: auto;
+        padding: 1em 1.5em;
+        border-radius: 20px;
+    }
+
+    /* --- Sponsor --- */
+    #sponsor {
+        padding: 2em 1.2em;
+    }
+    #sponsor_block {
+        width: 100%;
+        min-height: auto;
+    }
+    #thank_words_title {
+        font-size: 2em;
+        margin: 0.5em 0;
+    }
+    #thank_words img {
+        height: 60px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    /* --- Dialogs --- */
+    .dialogger {
+        width: 92%;
+        max-width: 380px;
+        border-radius: 12px;
+        padding: 0.5em;
+    }
+    .dialog_title {
+        font-size: 1.1em;
+        margin: 0.8em 0.8em 0.5em;
+    }
+    .qr_code img {
+        max-width: 100%;
+        height: auto;
+        max-height: 45vw;
+    }
+    .close_btn {
+        margin: 1.2em 0;
+    }
+    .close_button {
+        height: 2.6em;
+        line-height: 2.6em;
+    }
+
+    /* --- Footer --- */
+    footer {
+        margin-top: 3em;
+        padding-bottom: 2em;
+    }
+    #infos {
+        width: 100%;
+        min-height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 0;
+        padding: 1.5em 1em;
+    }
+    .word-column {
+        width: 48%;
+        min-width: 130px;
+        margin-bottom: 1.5em;
+        text-align: center;
+    }
+    #final_logo {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+        padding: 1em 1em;
+        gap: 0.8em;
+        border-top: 2px solid #ccc;
+    }
+    #bottom_logo {
+        justify-content: center;
+        flex: none;
+    }
+    #bottom_logo img {
+        height: 40px;
+        max-height: 40px;
+    }
+    #copyright {
+        justify-content: center;
+    }
+    #copyright p {
+        width: auto;
+        font-size: 0.9em;
+        white-space: normal;
+        text-align: center;
+    }
+
+    /* --- Back to top --- */
+    #back_to_top {
+        right: 1rem;
+        bottom: 1rem;
+    }
+    #back_to_top img {
+        height: 48px !important;
+    }
+}
+
+/* ======================================================
+   NARROW PHONES  (≤ 400px)
+   ====================================================== */
+@media screen and (max-width: 400px) {
+    #description p {
+        font-size: 1.6em;
+    }
+    #first_of_all p:first-of-type {
+        font-size: 1.6em;
+    }
+    #features > p:first-of-type {
+        font-size: 1.5em;
+    }
+    #download_options > p:first-child {
+        font-size: 1.7em;
+    }
+    #download_button {
+        padding: 0 3em;
+    }
+    #thank_words_title {
+        font-size: 1.8em;
+    }
+    .word-column {
+        width: 100%;
+    }
+    #infos {
+        flex-direction: column;
+        align-items: center;
+    }
+    #copyright p {
+        font-size: 0.8em;
+    }
+}
