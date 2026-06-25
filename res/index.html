@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>彝文查字系统 · 按拼音查字</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════ NAVBAR ══════════════════ -->
+  <nav class="navbar">
+    <div class="nav-inner">
+
+      <!-- Left: Logo + Nav links -->
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">ꀊ</span>
+          <span class="logo-text">
+            彝文查字系统
+            <span class="logo-sub">Nuosu Yi · 凉山标准彝文</span>
+          </span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html"  class="nav-link active">按拼音查字</a>
+          <a href="bushou.html" class="nav-link">按部首查字</a>
+          <a href="#" class="nav-link">本网页由阿力子者制作</a>
+        </nav>
+      </div>
+
+      <!-- Center: Search box -->
+      <div class="nav-center">
+        <div class="nav-search" id="navSearch">
+          <div class="search-wrap">
+            <span class="material-icons search-icon">search</span>
+            <input
+              type="text"
+              class="search-input"
+              id="searchInput"
+              placeholder="输入拼音查字，如 bat、ma、xi…"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button class="search-clear" id="searchClear" title="清除">
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+          <div class="search-dropdown" id="searchDropdown"></div>
+        </div>
+      </div>
+
+      <!-- Right: User avatar -->
+      <div class="nav-right">
+        <div class="user-menu">
+          <div class="user-avatar" id="userAvatar" title="用户">
+            <span class="material-icons">account_circle</span>
+          </div>
+          <div class="user-dropdown">
+            <a href="#" class="dropdown-item">个人资料</a>
+            <a href="#" class="dropdown-item">我的收藏</a>
+            <a href="#" class="dropdown-item">账户设置</a>
+            <a href="#" class="dropdown-item">帮助反馈</a>
+            <a href="#" class="dropdown-item">退出登录</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ══════════════════ FAB (mobile sidebar toggle) ══════════════════ -->
+  <button class="fab-menu" id="menuToggle" aria-label="打开声母目录">
+    <span class="material-icons">menu_book</span>
+  </button>
+
+  <!-- ══════════════════ MOBILE USER PANEL ══════════════════ -->
+  <div class="mobile-user-panel" id="mobileUserPanel">
+    <div class="mup-header">
+      <div class="mup-avatar">
+        <span class="material-icons">account_circle</span>
+      </div>
+      <div class="mup-user-links">
+        <a href="#" class="mup-link gray">个人资料</a>
+        <a href="#" class="mup-link gray">我的收藏</a>
+        <a href="#" class="mup-link gray">账户设置</a>
+        <a href="#" class="mup-link gray">退出登录</a>
+      </div>
+    </div>
+    <div class="mup-nav">
+      <a href="index.html"  class="mup-nav-link active">按拼音查字</a>
+      <a href="bushou.html" class="mup-nav-link">按部首查字</a>
+      <a href="#" class="mup-nav-link">文字简介</a>
+      <a href="#" class="mup-nav-link">使用说明</a>
+      <a href="#" class="mup-nav-link">关于本站</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════ APP BODY ══════════════════ -->
+  <div class="app-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">声母目录</span>
+        <button class="sidebar-close" id="closeSidebar" aria-label="关闭">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <ul class="sidebar-list" id="sidebarList"></ul>
+    </aside>
+
+    <!-- Overlay (sidebar / user panel backdrop) -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main content -->
+    <main class="content-area" id="contentArea">
+      <div class="loading">加载中…</div>
+    </main>
+
+  </div>
+
+  <!-- ══════════════════ CHARACTER DETAIL MODAL ══════════════════ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card" id="modalCard">
+      <button class="modal-close" id="modalClose" title="关闭">
+        <span class="material-icons">close</span>
+      </button>
+      <div class="modal-char"   id="modalChar"></div>
+      <div class="modal-divider"></div>
+      <div class="modal-pinyin" id="modalPinyin"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ Scripts ══════════════════ -->
+  <script src="bburma_dict.js"></script>  <!-- 提供 bburmas 变量 -->
+  <script src="common.js"></script>        <!-- 搜索 + 弹窗逻辑 -->
+  <script src="pinyin.js"></script>        <!-- 拼音页逻辑 -->
+
+</body>
+</html>
