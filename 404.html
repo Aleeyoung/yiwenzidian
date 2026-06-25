@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源走丢了 - Aliwonfun</title>
+    <link rel="shortcut icon" href="src/favicon.ico" type="image/x-icon">
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        div{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            background-color: #fff;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="src/aliwonfun.svg" style="height: 30px;opacity: 0.5;" alt="">
+        <p>Shit! We Found Nothing But 404.</p>
+        <p>这里啥也没有</p>
+        <button onclick="javascript:window.location.href='index.html'">返回主页</button>
+    </div>
+</body>
+</html>
