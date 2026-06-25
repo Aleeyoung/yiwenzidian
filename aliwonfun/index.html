@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页 - Aliwonfun</title>
+    <link rel="stylesheet" href="publicStyles.css">
+    <link rel="shortcut icon" href="../src/favicon.ico" type="image/x-icon">
+    <style>
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            position: sticky;
+            z-index: 1000;
+        }
+        .container {
+            width: 100vw;
+            height: 480px;
+            background: linear-gradient(45deg, #d905d9, #ea4335, #fbbc05, #34a853);
+            margin: 0 auto;
+            padding: 30px 0px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            flex-grow: 1;
+            transform: translateX(0px);
+            background-size: 300% 300%;
+            animation: gradientShift 12s ease infinite;
+            overflow: hidden;
+        }
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 100%;
+            }
+            25% {
+                background-position: 50% 50%;
+            }
+            50% {
+                background-position: 100% 0%;
+            }
+            75% {
+                background-position: 50% 50%;
+            }
+            100% {
+                background-position: 0% 100%;
+            }
+        }
+        
+        #titl{
+            font-size: 80px;
+            margin-top: 120px;
+            background: linear-gradient(to right, rgb(65, 122, 214), rgb(131, 17, 245),rgb(218, 23, 101));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            transform: translateY(10vh);
+            animation: toup 1s ease-out 1s 1 forwards;
+            opacity: 0;
+
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            text-fill-color: transparent;
+        }
+
+        .no-cssgradients #titl,
+        .no-backgroundclip #titl {
+            background: none !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            text-fill-color: #ffffff !important;
+            border-bottom: 3px solid #a18cd1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes toup {
+            to{
+                transform: translateY(0vh);
+                opacity: 1;
+            }
+        }
+        
+         #frontBtn{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            animation: comeclear 1s linear 1.6s 1 forwards;
+         }
+         @keyframes comeclear {
+            to{
+                opacity: 1;
+            }
+         }
+         #frontBtn button{
+            font-size: 18px;
+            border-radius: 50px;
+            outline: none;
+            border: none;
+            transition: 0.2s 0s linear;
+            height: 60px;
+            width: 180px;
+            margin: 50px;
+            cursor: pointer;
+         }
+
+         #frontBtn button:hover{
+            border: none;
+            color: white;
+            background-color: rgb(246, 173, 1);
+        }
+
+        @keyframes comein {
+            to{
+                transform: translateX(0vw);
+            }
+        }
+        @media (max-width: 768px) {
+            #container{
+                height: 500px;
+            }
+            #navlis {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                border-radius: 0 0 12px 12px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            #titl{
+                font-size: 50px;
+                margin-top: 13px;
+                text-align: left;
+                padding: 5vw;
+            }
+            
+            #navlis.active {
+                display: block;
+            }
+            
+            #navlis ol {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            .mobile-menu-btn:hover {
+                transform: scale(1);
+                background-color: rgba(0, 0, 0, 0);
+            }
+            
+            #banner {
+                padding: 10px 0;
+            }
+            #frontBtn button{
+                font-size: 12px;
+                height: 4em;
+                border: none;
+                margin: 30px;
+            }
+            .wyhp{
+                margin-top: 6vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="banner">
+                <div id="logoD">
+                    <img src="aliwonfun.png" alt="Aliwonfun" id="logo" />
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars">菜单</i>
+                </button>
+                <div id="navlis">
+                    <ol>
+                        <li class="liB active">主页</li>
+                        <li class="liB">Aliwonfun</li>
+                        <li class="liB">搜索</li>
+                        <li class="liB">内容</li>
+                        <li class="liB">捐赠</li>
+                        <li class="liB">登入/注册</li>
+                    </ol>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h2 id="titl">How is everything going?</h2>
+        <div id="frontBtn">
+            <button onclick="today_luck()">今日运势</button>
+            <button >孜莫格尼</button>
+        </div>
+        <div>
+            <p class="wyhp" style="text-align: center;color: #fff;">Aliwonfun I wish you be happy!</p>
+        </div>
+    </div>
+
+    <footer style="margin-top: -2px;">
+        <p>Aliwonfun | 广泛学习以睿智 | ꀊꆺꏸꋑ | Aleeyoung | MadeVision | ©2025-Now | All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function today_luck(){
+            alert("虽然今日Aliwonfun暂时与服务器连接出现了点问题，但是毋庸置疑的是，来访的你不仅帅气低调有内涵，而且美丽大方很优雅。你便是你自己的运势，多笑一笑。");
+        }
+
+        function checkBackgroundClipSupport() {
+            var el = document.createElement('div');
+            el.style.backgroundClip = 'text';
+            return el.style.backgroundClip === 'text' || 
+                'webkitBackgroundClip' in el.style;
+        }
+
+        function checkGradientSupport() {
+            var el = document.createElement('div');
+            var gradients = [
+                'linear-gradient(to right, #000, #fff)',
+                '-webkit-linear-gradient(left, #000, #fff)'
+            ];
+            
+            for (var i = 0; i < gradients.length; i++) {
+                el.style.backgroundImage = gradients[i];
+                if (el.style.backgroundImage.indexOf('gradient') > -1) return true;
+            }
+            
+            return false;
+        }
+
+        if (!checkBackgroundClipSupport() || !checkGradientSupport()) {
+            alert('您的浏览器不支持某些CSS特性，显示效果可能不完整。但不用担心，Aliwonfun一直在致力于优化。');
+        }
+
+        document.getElementById('logo').onclick = function(){
+            document.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

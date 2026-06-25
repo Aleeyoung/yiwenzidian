@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgb(191, 191, 192);
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+#banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    background: linear-gradient(to right, white, white,rgb(92, 140, 250));
+}
+
+#logoD {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 30px;
+    width: auto;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+#logo:hover {
+    transform: scale(1.1);
+}
+
+#navlis {
+    display: flex;
+}
+
+#navlis ol {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
+.liB {
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: #3174f1;
+}
+
+.liB:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #249a41, #ff0000);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.liB:hover {
+    background: #f8f9fa;
+    color: red;
+}
+
+.liB:hover:before {
+    width: 70%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    transform: scale(0.8);
+    cursor: pointer;
+    color: #f6ad01;
+    margin-right: 20px;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    #navlis {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    #navlis.active {
+        display: block;
+    }
+    
+    #navlis ol {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    .mobile-menu-btn:hover {
+        transform: scale(1);
+    }
+    
+    #banner {
+        padding: 10px 0;
+    }
+}
+
+#container{
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer{
+    margin-top: 3rem;
+    height: 10rem;
+    width: 100vw;
+    background-color: rgb(84, 83, 83);
+    color: #fff;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
