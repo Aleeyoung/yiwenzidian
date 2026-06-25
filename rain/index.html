@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彝文字雨 - Aliwonfun</title>
+    <link rel="shortcut icon" href="../src/favicon.ico" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        canvas{
+            background-color: #000;
+        }
+        #bt2{
+            height: 7vh;
+            width: 10vw;
+            cursor: pointer;
+            background-color: rgb(66, 133, 244);
+            border: 1px solid white;
+            border-radius: 5px;
+            color: white;
+            outline: none;
+            transition: 0.4s;
+        }
+        #bt2:hover{
+            color: rgb(66, 133, 244);
+            background-color: #fff;
+            border: 1px solid rgb(66, 133, 244);
+        }
+
+        #dialog{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background-color: #fff;
+            border: 2px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            width: 35em;
+        }
+        #control{
+            width: 40em;
+            height: 0px;
+            display: flex;
+            flex-direction: row;
+            border-radius: 30px;
+            background-color: #e5eefd;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+        form{
+            margin: 16px;
+        }
+        #sahur{
+            height: 10em;
+            transition: 0.3s;
+        }
+        #sahur:hover{
+            transform: scale(1.5);
+        }
+        .fontsize{
+            color: #fff;
+            background-color: #3174f1;
+            height: 2em;
+            width: 4em;
+            border: none;
+            cursor: pointer;
+        }
+        .confirmchange{
+            color: #fff;
+            background-color: #249a41;
+            height: 3em;
+            width: 7em;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+            margin: 1em 0;
+        }
+        @media (max-width: 768px) {
+            #dialog{
+                width: 18em;
+                right: 34px;
+                bottom: 200px;
+            }
+            #bt2{
+                width: 30vw;
+                margin-top: 15px;
+            }
+            #control{
+                width: 20em;
+                height: 0;
+                transform: translate(-56%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg"></canvas>
+
+    <div id="dialog">
+        <span style="font-weight: bolder;font-size: 30px;">彝文字雨</span>
+       
+        <hr>
+        <p style="margin: 20px 0;">随时按下“Q”以打开控制</p>
+        <span style="font-size: 10px;">本网页由 <a href="../index.html"><img id="logo" src="../aliwonfun/aliwonfun.png" style="height:3vh;" alt="Aliwonfun"></a> 编写</span>
+        <div style="text-align: right;">
+            <button id="bt2" onclick="closedialog()">关闭</button>
+        </div>
+    </div>
+
+    <div id="control">
+
+        <div style="width: 70%;">
+            <form action="" id="former">
+                <h2 style="margin: 0.4em 0;">让我们来控制它</h2>
+                <hr style="margin: 0.4em 0;">
+                <p>文字大小：<span id="nowfontsize">20</span>%</p>
+                <progress value="20" max="100" id="nowfontsizer"></progress>
+                <input type="button" value="更大" id="" class="fontsize" onclick="bigger()">
+                <input type="button" value="更小" id="" class="fontsize" onclick="smaller()">
+                <hr style="margin: 0.4em 0;">
+
+                <p>字体颜色：<span>经典</span></p>
+                <input type="radio" name="fcolor" class="colors" value="经典" checked>经典
+                <input type="radio" name="fcolor" class="colors" value="彩色">彩色
+                <hr style="margin: 0.4em 0;">
+
+                <p style="font-size: 10px;">本网页由 <a href="../index.html"><img id="logo" src="../aliwonfun/aliwonfun.png" style="height:3vh;" alt=""></a> 编写</p>
+                <input type="button" value="就是这样！" class="confirmchange" onclick="changer()">
+                <input type="button" value="还是不了！" class="confirmchange" onclick="reseter()">
+
+            </form>
+        </div>
+        
+        <div style="width: 30%;display: flex;justify-content: center;align-items: center;">
+            <img src="sahur.png" alt="Tung Tung Tung Sahur !" title="Tung Tung Tung Sahur !" id="sahur">
+        </div>
+        
+    </div>
+
+    <script src="words.js"></script>
+    <script src="rainscript.js"></script>
+
+</body>
+</html>
