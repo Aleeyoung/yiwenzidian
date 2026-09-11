@@ -136,7 +136,7 @@
                             </div>
                             <div class="small_title center_title">下载安卓版</div>
                             <div class="small_button">
-                                <a class="download_button" href="https://wwbnl.lanzn.com/i3RQY3uwkqsf">下载密码：gu6u</a>
+                                <a class="download_button" id="copyButton" href="https://wwbnl.lanzn.com/i3RQY3uwkqsf">下载密码：gu6u</a>
                             </div>
                         </div>
                         <div class="items">
@@ -344,6 +344,30 @@
             link.addEventListener("click", function() {
                 bannerRight.classList.remove("show");
             });
+        });
+    </script>
+
+    <script>
+        const copyButton = document.getElementById('copyButton');
+    
+        copyButton.addEventListener('click', async (e) => {
+            e.preventDefault(); // Stop immediate navigation
+    
+            const targetUrl = copyButton.href;
+            const textContent = copyButton.textContent;
+    
+            // Extract the code after the colon (e.g., "7bhs" from "下载密码: 7bhs")
+            const codeToCopy = textContent.split(':').pop().trim();
+    
+            try {
+                // Write to clipboard
+                await navigator.clipboard.writeText(codeToCopy);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+    
+            // Navigate to the URL after the copy operation finishes
+            window.location.href = targetUrl;
         });
     </script>
 </body>
