@@ -241,7 +241,7 @@ header {
     flex-direction: row;
     width: 100%;
     margin: 2em 0;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 1em;
 }
 .download_button {
